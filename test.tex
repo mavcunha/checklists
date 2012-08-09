@@ -1,27 +1,48 @@
-\documentclass[10pt]{article}
+\documentclass[10pt, twocolumn]{article}
 
 \usepackage{booktabs}% def toprule, midrule and etc.
+\usepackage[landscape]{geometry}
+\usepackage[cm]{fullpage}
+
 
 \newenvironment{checklist}[1]{%
+
+\newcommand{\eol}{}
+
   \renewcommand{\item}[2]{
-    \uppercase{##1}\dotfill&\dotfill\uppercase{##2}\\ 
+    ##1\hspace{2em}\dotfill\makebox{\uppercase{##2}}\\
   }
-  \renewcommand{\tabcolsep}{0em}
-  \begin{tabular}{p{0.5\linewidth}r}
+
+  \newcommand{\step}[1]{%
+    \hspace*{10em}-\hspace*{\labelsep}##1\\
+  }
+
+  \begin{tabular}{p{0.8\linewidth}}
      \toprule
-       \multicolumn{2}{c}{\textbf{\uppercase{#1}}}\\
+       \multicolumn{1}{c}{\textbf{\uppercase{#1}}}\\
      \midrule
-}{\bottomrule\end{tabular}}   
+}{\bottomrule\end{tabular}\vspace{1em}}   
 
 \begin{document}
 
 \begin{checklist}{before push}
-  \item{upstream}{pull}
-  \item{tests}{green}
-  \item{files}{added/stashed}
-  \item{commit msg}{identified}
-  \item{ci}{green}
+  \item{CI}{green}
+  \item{Upstream}{pull/update}
+  \item{Tests}{green}
+  \item{Files}{added/stashed}
+  \item{Commit msg}{identified}
+  \item{CI}{green}
 \end{checklist}
 
+\begin{checklist}{before code}
+  \item{AC}{clear}
+  \item{Pair}{briefed}
+  \item{Something}{Else}
+    \step{something shiny}
+    \step{something bright}
+    \step{something expensive}
+    \step{something clear}
+    \step{something valuable}
+\end{checklist}
 
 \end{document}
