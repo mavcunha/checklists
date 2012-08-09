@@ -1,0 +1,27 @@
+\documentclass[10pt]{article}
+
+\usepackage{booktabs}% def toprule, midrule and etc.
+
+\newenvironment{checklist}[1]{%
+  \renewcommand{\item}[2]{
+    \uppercase{##1}\dotfill&\dotfill\uppercase{##2}\\ 
+  }
+  \renewcommand{\tabcolsep}{0em}
+  \begin{tabular}{p{0.5\linewidth}r}
+     \toprule
+       \multicolumn{2}{c}{\textbf{\uppercase{#1}}}\\
+     \midrule
+}{\bottomrule\end{tabular}}   
+
+\begin{document}
+
+\begin{checklist}{before push}
+  \item{upstream}{pull}
+  \item{tests}{green}
+  \item{files}{added/stashed}
+  \item{commit msg}{identified}
+  \item{ci}{green}
+\end{checklist}
+
+
+\end{document}
