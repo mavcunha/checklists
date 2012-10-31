@@ -1,0 +1,42 @@
+\input{input/preamble.inc}
+
+\fancyfoot[C]{Developement Checklist, version: 0.1}
+
+\begin{document}
+
+\begin{task}{SOLID}
+
+  \begin{checklist}{Single Responsability Principle}
+    \item{Uses Cases a class implement}{ONE}
+    \item{Reasons for changing a class}{ONE}
+    \item{Compilation changes}{Changed only}
+    \item{Deployment changes}{Changed only}
+  \end{checklist}
+
+  \begin{checklist}{Open / Close Principle}
+    \item{Existent code}{Closed for Modification}
+    \item{New behavior}{New code}
+    \item{New behavior}{Doesn't change client}
+  \end{checklist}
+
+  \begin{checklist}{Liskov Substitution Principle}
+    \item{Subtype}{substitutable for base type}
+    \item{Upon violation}{Select Composition}
+  \end{checklist}
+
+  \begin{checklist}{Interface Segregation Principle}
+    \item{Clients depend on}{what they care about}
+    \item{Access segregation}{interfaces}
+    \item{Interface affinity}{to their users}
+  \end{checklist}
+
+  \begin{checklist}{Dependency Inversion Principle}
+    \item{Source dependency}{Inverted}
+    \item{Flow on boundaries}{Inverted}
+    \item{HL\footnote{High Level} Policies dependency}{None}
+    \item{LL\footnote{Low Level} Policies  dependency}{High Level}
+  \end{checklist}
+
+\end{task}
+
+\end{document}
