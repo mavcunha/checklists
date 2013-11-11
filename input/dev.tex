@@ -13,14 +13,32 @@
 \end{checklist}
 
 \begin{task}{TDD}
+  
+  \begin{checklist}{before add test -- GREEN$\rightarrow$RED}
+    \item{Tests}{full set -- green}
+  \end{checklist}
 
-  \begin{checklist}{after code test}
+  \begin{checklist}{after add test -- RED}
     \item{Tests}{red}
     \item{Assertions}{one}
   \end{checklist}
 
-  \begin{checklist}{before next test}
-    \item{Tests}{full set -- green}
+  \begin{checklist}{TPP\footnote{Transformation Priority Premise} -- RED$\rightarrow$GREEN}
+    \item{No code}{\{\}$\rightarrow$nil}
+    \item{Constant}{nil$\rightarrow$const}
+    \item{Complex constant}{const$\rightarrow$const+}
+    \item{Add variable/argument}{const+$\rightarrow$scalar}
+    \item{Unconditional statement}{stmt$\rightarrow$stmt(s)}
+    \item{Add conditional}{unconditional$\rightarrow$if}
+    \item{Scalar to array}{scalar$\rightarrow$array}
+    \item{Add container}{array$\rightarrow$container}
+    \item{Add recursion}{stmt$\rightarrow$recursion}
+    \item{Conditional to loop}{if$\rightarrow$while}
+    \item{To function}{expression$\rightarrow$function}
+    \item{Add assignment}{variable$\rightarrow$assignment}
+  \end{checklist}
+
+  \begin{checklist}{after add code -- GREEN}
     \item{Code Refactoring}{done}
     \item{Test Refactoring}{done}
   \end{checklist}
