@@ -6,7 +6,7 @@ IN_DIR  = 'input'
 OUT_DIR = 'pdf'
 BUILD_DIR = 'build'
 
-PDFLATEX_BIN = `which pdflatex`.chomp
+PDFLATEX_BIN = %x{which pdflatex}.chomp
 
 task :convert => [:clean, :compile, :publish]
 
