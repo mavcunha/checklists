@@ -1,6 +1,6 @@
 require 'fileutils'
 
-task :default => [:convert]
+task :default => [:build]
 
 IN_DIR  = 'input'
 OUT_DIR = 'pdf'
@@ -8,7 +8,7 @@ BUILD_DIR = 'build'
 
 PDFLATEX_BIN = %x{which pdflatex}.chomp
 
-task :convert => [:clean, :compile, :publish]
+task :build => [:clean, :compile, :publish]
 
 task :clean do
   FileUtils.rm_r Dir["#{BUILD_DIR}/*"]
