@@ -27,4 +27,4 @@ Here's an example of a simple checklist:
 After this, running `rake` should output a PDF file on `pdf/` directory, which
 will look similar to this:
 
-![Groceries Checklist](https://raw.githubusercontent.com/mavcunha/checklists/master/groceries_checklist.png)
+![Groceries Checklist](https://raw.githubusercontent.com/mavcunha/checklists/img/master/groceries_checklist.png)
