@@ -15,8 +15,9 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% creates empty checkboxes
-\newcommand{\checkbox}{\makebox[3ex][r]{\LARGE{$\square$}}}
+% creates empty checkboxes to be used as the second
+% argument to \item on checklist
+\newcommand{\checkbox}{\makebox[3ex][r]{\Large{$\square$}}}
 
 % draws a dashed box around to group checklists
 % a task has a title, which is the group title
