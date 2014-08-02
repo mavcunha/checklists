@@ -27,3 +27,12 @@ task :publish do
     FileUtils.mv(pdf, OUT_DIR)
   end
 end
+
+task :single, [:file] => :clean do |t,args|
+  FileUtils.mkdir BUILD_DIR if !Dir.exists?(BUILD_DIR)
+  Dir["#{IN_DIR}/**/#{args[:file]}.tex"].each do |file|
+    sh "#{PDFLATEX_BIN} -output-dir=#{BUILD_DIR} #{file}"
+  end
+  Rake::Task[:publish].invoke
+end
+
