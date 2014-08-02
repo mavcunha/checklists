@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usepackage{environ}
 \usepackage{fancyhdr}
+\usepackage{amssymb}
 
 \pagestyle{fancy}
 \fancyhead{}
@@ -14,11 +15,14 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+% creates empty checkboxes
+\newcommand{\checkbox}{\makebox[3ex][r]{\LARGE{$\square$}}}
+
 % draws a dashed box around to group checklists
 % a task has a title, which is the group title
 \NewEnviron{task}[1]{\par
 \begin{tikzpicture}
-\node[rectangle,minimum width=0.9\linewidth] (m) 
+\node[rectangle,minimum width=0.9\linewidth] (m)
   {\begin{minipage}{0.85\linewidth}
     \begin{center}\uppercase{#1}\\\vspace{1em}\BODY\end{center}
    \end{minipage}};
@@ -27,7 +31,7 @@
 }
 
 % checklist env sets up a table and format the items.
-% in case a item has steps use the \step{asdf} 
+% in case a item has steps use the \step{asdf}
 % command.
 \newenvironment{checklist}[1]{%
   \renewcommand{\item}[2]{%
