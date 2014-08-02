@@ -24,5 +24,7 @@ Here's an example of a simple checklist:
 \end{document}
 ```
 
-After this, running `rake` should output a PDF file on `pdf/` directory. Check
-the current checklists in `input` for more examples.
+After this, running `rake` should output a PDF file on `pdf/` directory, which
+will look similar to this:
+
+![Groceries Checklist](https://raw.githubusercontent.com/mavcunha/checklists/master/groceries_checklist.png)
