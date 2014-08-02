@@ -9,7 +9,7 @@ BUILD_DIR = 'build'
 
 PDFLATEX_BIN = %x{which pdflatex}.chomp
 
-task :build => [:clean, :compile]
+task :build => [:clean, :compile, :publish]
 
 task :clean do
   FileUtils.rm_r Dir["#{BUILD_DIR}/*"]
