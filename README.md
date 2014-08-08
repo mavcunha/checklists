@@ -1,4 +1,4 @@
-# Checklists template in LaTex
+# Checklists template in LaTeX
 
 This is a simple set of LaTex files to produce nice PDF formatted checklists.
 You need to have a LaTex environment set up and `pdflatex` available.
