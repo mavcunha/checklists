@@ -36,10 +36,3 @@ task :single, [:file] => :clean do |t,args|
   Rake::Task[:publish].invoke
 end
 
-task :onsnapci do
-  fail "Only run on Snap-CI" unless ENV['SNAP_CI'] == 'true'
-end
-
-task :download => :onsnapci do
-  sh "rsync -a --delete rsync://ctan.math.utah.edu/CTAN/systems/texlive/tlnet/ #{ENV['SNAP_CACHE_DIR']}/texlive"
-end
